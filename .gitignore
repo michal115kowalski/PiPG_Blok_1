@@ -5,6 +5,8 @@
 [Bb]uilds/
 [Ll]ogs/
 [Mm]emoryCaptures/
+[Pa]ckages/
+
 
 # Never ignore Asset meta data
 ![Aa]ssets/**/*.meta
@@ -53,6 +55,3 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
-
-#Takie tam
-manifest.json
