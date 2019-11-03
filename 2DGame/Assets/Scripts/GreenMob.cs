@@ -27,7 +27,6 @@ public class GreenMob : MonoBehaviour
         if (hited&&!stopHit)
         {
             Destroy(Pc);
-            // Pc.enabled = false;
             jump();
             stopHit = true;
           
@@ -38,8 +37,6 @@ public class GreenMob : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(-speedMob, GetComponent<Rigidbody2D>().velocity.y);
         hited = Physics2D.OverlapCircle(chitCheck.position, ChitRadious, Hit);
-      //  colision = Physics2D.OverlapCircle(checkColision.position, checkColisionRadius, Colider);
-        //colision = Physics2D.OverlapCircle(checkColsionRight.position, checkColisionRadiusright, Colider);
     }
 
     public void jump()
