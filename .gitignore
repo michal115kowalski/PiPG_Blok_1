@@ -5,7 +5,6 @@
 [Bb]uilds/
 [Ll]ogs/
 [Mm]emoryCaptures/
-[Pa]ckages/
 
 
 # Never ignore Asset meta data
@@ -55,3 +54,7 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+
+#JSON
+manifest.json
+
