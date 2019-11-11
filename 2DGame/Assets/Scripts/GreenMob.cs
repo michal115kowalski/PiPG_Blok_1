@@ -26,8 +26,8 @@ public class GreenMob : MonoBehaviour
     {
         if (hited&&!stopHit)
         {
-            Destroy(Pc);
             jump();
+            Destroy(Pc);
             stopHit = true;
           
         }
