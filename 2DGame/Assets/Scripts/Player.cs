@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     public float jumpHeight;
     public Transform groundCheck;
+    //public Transform Camera;
     public float groundCheckRadius;
     public LayerMask IsGround;
     private bool grounded;
@@ -72,6 +73,12 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Coin")
         {
             getCoins++;
+        }
+
+        if (collision.gameObject.tag == "Mob")
+        {
+          //  gameObject.SendMessage("GameOwer","GameOwer");
+            Destroy(gameObject);
         }
     }
 
