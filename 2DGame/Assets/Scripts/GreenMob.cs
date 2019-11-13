@@ -49,8 +49,11 @@ public class GreenMob : MonoBehaviour
     {
         if (collision.gameObject.tag != "Ground")
         {
-            Debug.Log("Colision detected");
-            speedMob = speedMob * (-1);
+            if (collision.gameObject.tag != "Coin")
+            {
+                Debug.Log("Colision detected");
+                speedMob = speedMob * (-1);
+            }
         }
     }
 }

@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public LayerMask IsGround;
     private bool grounded;
     private bool doublejump;
+    private int getCoins =0;
 
 
     void Start()
@@ -65,4 +66,13 @@ public class Player : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpHeight);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Coin")
+        {
+            getCoins++;
+        }
+    }
+
 }
