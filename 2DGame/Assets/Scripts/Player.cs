@@ -15,12 +15,12 @@ public class Player : MonoBehaviour
     private bool grounded;
     private bool doublejump;
     private int getCoins =0;
+    PolygonCollider2D PC;
 
 
     void Start()
     {
-
-        
+        PC = gameObject.GetComponent<PolygonCollider2D>();          
     }
 
     // Update is called once per frame
@@ -77,8 +77,10 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.tag == "Mob")
         {
-          //  gameObject.SendMessage("GameOwer","GameOwer");
-            Destroy(gameObject);
+            //  gameObject.SendMessage("GameOwer","GameOwer");
+            jump();
+            PC.enabled = false;
+            
         }
     }
 
