@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Coin
   - Mob
+  - Water
+  - Castle
   layers:
   - Default
   - TransparentFX
@@ -25,12 +27,12 @@ TagManager:
   - 
   - Player
   - Camera
-  - 
+  - Water
   - 
   - coin
   - objects
   - mob
-  - 
+  - UI
   - 
   - 
   - 
