@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public Text myPointVariable, myLiveVariable;
     GameObject myTextPointVariable, myTextLiveVariable;
     private int numberlives = 3;
+    public Animator animator;
 
 
     void Start()
@@ -41,7 +42,10 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-      
+        animator.SetFloat("move", 0f);
+        animator.SetFloat("jump", 0f);
+
+
         if (grounded&&Input.GetKeyDown(KeyCode.UpArrow))
         {
             jump();
@@ -57,6 +61,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
+            animator.SetFloat("move", 1f);
             GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
             Vector3 characterScale = transform.localScale;
             characterScale.x = 1;
@@ -66,6 +71,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            animator.SetFloat("move", 1f);
             GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
             Vector3 characterScale = transform.localScale;
             characterScale.x = -1;
@@ -76,12 +82,6 @@ public class Player : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
         }
-
-
-
-
-
-
     }
 
     private void FixedUpdate()
@@ -91,10 +91,9 @@ public class Player : MonoBehaviour
 
     public void jump()
     {
+        animator.SetFloat("jump", 1f);
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpHeight);
         SoundManagerScript.PlaySound("jump");
-
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -102,7 +101,7 @@ public class Player : MonoBehaviour
       
         if (collision.gameObject.tag == "Castle")
         {
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("StartScene");
         }
 
         if (collision.gameObject.tag == "Mob")
